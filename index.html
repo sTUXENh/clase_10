@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>HTML, SVG, CSS y JS</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&family=Saira:ital,wght@0,100..900;1,100..900&display=swap"
+            rel="stylesheet"
+        />
+    </head>
+    <body>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 600" onClick="alert('What?!)">
+            <style>
+                .grid {
+                    fill: none;
+                    stroke: lightgray;
+                }
+                .axis {
+                    stroke: #000;
+                }
+                .label {
+                    font-size: 12px;
+                    text-anchor: middle;
+                    dominant-baseline: middle;
+                }
+                .tick {
+                    font-size: 10px;
+                    text-anchor: end;
+                    dominant-baseline: middle;
+                }
+                .area {
+                    fill-opacity: 0.1;
+                    stroke-width: 1;
+                    transition: all ease 0.4s;
+                }
+                .area:hover {
+                    fill-opacity: 0.3;
+                    transition: all ease 0.4s;
+                }
+                .legend-text {
+                    font-size: 10px;
+                }
+                .legend-title {
+                    font-size: 12px;
+                    font-weight: bold;
+                }
+            </style>
+
+            <g transform="translate(345,315)">
+                <!-- Grilla: 0 a 90, cada 10 = 28.5 px -->
+                <g fill="none" stroke="#d3d3d3">
+                    <circle r="257" />
+                    <circle r="228" />
+                    <circle r="200" />
+                    <circle r="171" />
+                    <circle r="143" />
+                    <circle r="114" />
+                    <circle r="86" />
+                    <circle r="57" />
+                    <circle r="29" />
+                </g>
+
+                <!-- Ejes -->
+                <path
+                    stroke="#000"
+                    d="M0,0V-285M0,0L271.05,-88.07M0,0L167.52,230.57M0,0L-167.52,230.57M0,0L-271.05,-88.07"
+                />
+                <g class="label">
+                    <text y="-295">Staff with PhD</text>
+                    <text x="280.56" y="-91.16">Faculty Student</text>
+                    <text x="173.4" y="238.66">International Research Network</text>
+                    <text x="-173.4" y="238.66">Papers Per Faculty</text>
+                    <text x="-280.56" y="-91.16">Citations per Paper</text>
+                </g>
+
+                <!-- Escala -->
+                <path
+                    stroke="#000"
+                    d="M-6,0H0M-6,-28.5H0M-6,-57H0M-6,-85.5H0M-6,-114H0M-6,-142.5H0M-6,-171H0M-6,-199.5H0M-6,-228H0M-6,-256.5H0"
+                />
+                <g class="tick">
+                    <text x="-9">0</text>
+                    <text x="-9" y="-28.5">10</text>
+                    <text x="-9" y="-57">20</text>
+                    <text x="-9" y="-85.5">30</text>
+                    <text x="-9" y="-114">40</text>
+                    <text x="-9" y="-142.5">50</text>
+                    <text x="-9" y="-171">60</text>
+                    <text x="-9" y="-199.5">70</text>
+                    <text x="-9" y="-228">80</text>
+                    <text x="-9" y="-256.5">90</text>
+                </g>
+
+                <!-- Series -->
+                <g id="uc" fill="#1f77b4" stroke="#1f77b4">
+                    <polygon class="area" points="0,-281 194.97,-63.35 166.93,229.76 -163.4,224.91 -210.18,-68.29" />
+                    <g stroke="none">
+                        <circle r="2" cy="-281" />
+                        <circle r="2" cx="194.97" cy="-63.35" />
+                        <circle r="2" cx="166.93" cy="229.76" />
+                        <circle r="2" cx="-163.4" cy="224.91" />
+                        <circle r="2" cx="-210.18" cy="-68.29" />
+                    </g>
+                </g>
+                <g id="uchile" fill="#ff7f0e" stroke="#ff7f0e">
+                    <polygon class="area" points="0,-205 62.77,-20.4 166.93,229.76 -166.93,229.76 -208.28,-67.67" />
+                    <g stroke="none">
+                        <circle r="2" cy="-205" />
+                        <circle r="2" cx="62.77" cy="-20.4" />
+                        <circle r="2" cx="166.93" cy="229.76" />
+                        <circle r="2" cx="-166.93" cy="229.76" />
+                        <circle r="2" cx="-208.28" cy="-67.67" />
+                    </g>
+                </g>
+                <g id="udec" fill="#2ca02c" stroke="#2ca02c">
+                    <polygon class="area" points="0,-182 101.76,-33.06 165.76,228.14 -149.89,206.3 -238.72,-77.56" />
+                    <g stroke="none">
+                        <circle r="2" cy="-182" />
+                        <circle r="2" cx="101.76" cy="-33.06" />
+                        <circle r="2" cx="165.76" cy="228.14" />
+                        <circle r="2" cx="-149.89" cy="206.3" />
+                        <circle r="2" cx="-238.72" cy="-77.56" />
+                    </g>
+                </g>
+                <g id="usach" fill="#d62728" stroke="#d62728">
+                    <polygon class="area" points="0,-84 80.84,-26.27 163.99,225.72 -135.78,186.88 -165.48,-53.77" />
+                    <g stroke="none">
+                        <circle r="2" cy="-84" />
+                        <circle r="2" cx="80.84" cy="-26.27" />
+                        <circle r="2" cx="163.99" cy="225.72" />
+                        <circle r="2" cx="-135.78" cy="186.88" />
+                        <circle r="2" cx="-165.48" cy="-53.77" />
+                    </g>
+                </g>
+            </g>
+
+            <!-- Leyenda -->
+            <g transform="translate(810,30)">
+                <text font-size="12" font-weight="bold">Nombre de Instituciones</text>
+                <g class="leg" transform="translate(0,16)">
+                    <rect width="15" height="15" fill="#1f77b4" />
+                    <text x="20" y="12.5">
+                        Pontificia Universidad
+                        <tspan x="20" dy="1.2em">Católica de Chile</tspan>
+                    </text>
+                    <rect y="36.6" width="15" height="15" fill="#ff7f0e" />
+                    <text x="20" y="49.1">Universidad de Chile</text>
+                    <rect y="57.6" width="15" height="15" fill="#2ca02c" />
+                    <text x="20" y="70.1">Universidad de Concepción</text>
+                    <rect y="78.6" width="15" height="15" fill="#d62728" />
+                    <text x="20" y="91.1">
+                        Universidad de Santiago de
+                        <tspan x="20" dy="1.2em">Chile</tspan>
+                    </text>
+                </g>
+            </g>
+        </svg>
+    </body>
+</html>
